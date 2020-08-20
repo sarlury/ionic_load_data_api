@@ -9,6 +9,7 @@
 <ion-content [fullscreen]="true">
   <div class="ion-padding">
     <p>Data will display here</p>
-    <p>{{ data ? data : '-' }}</p>
+    <p *ngIf="!error;else errorContent">{{ data ? data : '-' }}</p>
+    <ng-template #errorContent><p><span style="color: red;">{{error}}</span></p></ng-template>
   </div>
 </ion-content>
